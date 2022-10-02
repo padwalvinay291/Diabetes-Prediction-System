@@ -1,0 +1,85 @@
+<style>
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+body, html {
+  height: 105%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("https://www.shutterstock.com/image-photo/diabetes-test-health-medical-concept-600w-567061648.jpg");
+
+  /* Add the blur effect */
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Diabetes Dataset</title>
+</head>
+
+    <body>
+
+    <div class="bg-image"></div>
+    <div class="bg-text">
+    <center>
+
+        <h1>
+        Diabetes Detection
+        </h1>
+            <form action="/predict" method="POST" class="text-center border border-light p-5" >
+                <div class="form-group" style="padding:9px;">
+                <input type="radio" name="Gender" value="1" style="margin:5px;" required> Male <input style="margin:5px;" type="radio" name="Gender" value="0" required> Female
+                <input  style="padding:5px" type="number" min="0" max="100" name="Age" class="form-control mb-4" placeholder="Enter Patient Age" required>
+                <input  style="padding:5px" type="number" step="any" min="10" max="60" name="BMI" class="form-control mb-4" placeholder="Enter Body Mass Index(Index)" required>
+                <input  style="padding:5px" type="number" min="0" max="300" name="Cholesterol" class="form-control mb-4" placeholder="Enter Cholesterol" required>
+                <input  style="padding:5px" type="number" min="0" max="250" name="HDLChol" class="form-control mb-4" placeholder="High-density Lipoprotein (HDL) Cholesterol" required>
+                <input  style="padding:5px" type="number" step="any" min="0" max="40" name="CholHDLratio" class="form-control mb-4" placeholder=" Cholesterol/High-density Lipoprotein (HDL) Ratio" required>
+                <input  style="padding:5px" type="number" min="50" max="400" name="Glucose" class="form-control mb-4" placeholder="Enter Glucose Level" required>
+                <button type="submit" class="btn btn-primary btn-block mb-3">Detect</button>
+                
+				</div>
+            </form>
+        
+    </center>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    </body>
+</html>
+
